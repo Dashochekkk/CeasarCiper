@@ -36,7 +36,7 @@ public class CeasarCiperController {
     @FXML
     private Button executeButton;
 
-    private final CipherProcessor processor = new CipherProcessor();
+    private final CeasarProcessor processor = new CeasarProcessor();
 
     @FXML
     public void initialize() {
