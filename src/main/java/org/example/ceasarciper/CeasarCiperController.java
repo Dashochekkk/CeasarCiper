@@ -40,7 +40,7 @@ public class CeasarCiperController {
 
     @FXML
     public void initialize() {
-        // Устанавливаем группу для радиокнопок
+
         ToggleGroup group = new ToggleGroup();
 
         encryptWithKeyRadio.setToggleGroup(group);
@@ -48,7 +48,7 @@ public class CeasarCiperController {
         bruteForceRadio.setToggleGroup(group);
         statisticalAnalysisRadio.setToggleGroup(group);
 
-        // Добавляем слушателей для изменения видимости поля keyField и keyLabel
+
         encryptWithKeyRadio.selectedProperty().addListener((observable, oldValue, newValue) -> {
             updateKeyFieldVisibility();
             updateButtonState();
@@ -66,7 +66,7 @@ public class CeasarCiperController {
             updateButtonState();
         });
 
-        // Инициализация видимости поля keyField и keyLabel
+
         updateKeyFieldVisibility();
         updateButtonState();
     }
@@ -98,19 +98,15 @@ public class CeasarCiperController {
         }
 
         if (encryptWithKeyRadio.isSelected()) {
-            // Логика для зашифровки с ключом
             processor.encryptFile(filePath, filePath + ".encrypted", key);
             showSuccessAlert("Успех", "Файл успешно зашифрован.", filePath + ".encrypted");
         } else if (decryptWithKeyRadio.isSelected()) {
-            // Логика для расшифровки с ключом
             processor.decryptFile(filePath, filePath + ".decrypted", key);
             showSuccessAlert("Успех", "Файл успешно расшифрован.", filePath + ".decrypted");
         } else if (bruteForceRadio.isSelected()) {
-            // Логика для расшифровки методом brute force
             processor.bruteForceDecrypt(filePath, filePath + ".brute_force_decrypted");
             showSuccessAlert("Успех", "Файл успешно расшифрован методом brute force.", filePath + ".brute_force_decrypted");
         } else if (statisticalAnalysisRadio.isSelected()) {
-            // Логика для расшифровки методом статистического анализа
             processor.statisticalAnalysisDecrypt(filePath, filePath + ".statistical_analysis_decrypted");
             showSuccessAlert("Успех", "Файл успешно расшифрован методом статистического анализа.", filePath + ".statistical_analysis_decrypted");
         }

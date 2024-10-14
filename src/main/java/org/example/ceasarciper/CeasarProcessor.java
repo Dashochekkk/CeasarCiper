@@ -3,7 +3,7 @@ package org.example.ceasarciper;
 import java.io.*;
 import java.util.*;
 
-public class CipherProcessor {
+public class CeasarProcessor {
 
     private static final char[] ALPHABET_ENG = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 
@@ -169,7 +169,7 @@ class StatisticalAnalyzer {
             }
         }
 
-        // Предполагаем, что наиболее часто встречающаяся буква в зашифрованном тексте соответствует 'e'
+        // Предполагаем что самая зашифрованная буква это e
         int key = (alphabet.indexOf(mostFrequentChar) - alphabet.indexOf('e') + alphabet.length()) % alphabet.length();
 
         return key;
