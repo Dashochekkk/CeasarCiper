@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="320.0" prefWidth="285.0" spacing="10" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ceasarciper.CeasarCiperController">
+    <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Шифр Цезаря" />
+
+    <Label text="Выберите действие:" />
+    <RadioButton fx:id="encryptWithKeyRadio" text="Зашифровать с ключом" toggleGroup="$actionGroup" >
+        <toggleGroup>
+            <ToggleGroup fx:id="actionGroup" />
+        </toggleGroup></RadioButton>
+    <RadioButton fx:id="decryptWithKeyRadio" text="Расшифровать с ключом" toggleGroup="$actionGroup" />
+    <RadioButton fx:id="bruteForceRadio" text="Расшифровать методом brute force" toggleGroup="$actionGroup" />
+    <RadioButton fx:id="statisticalAnalysisRadio" text="Расшифровать методом статистического анализа" toggleGroup="$actionGroup" />
+    <Label fx:id="keyLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="144.0" text="Введите ключ:" visible="false" />
+    <TextField fx:id="keyField" alignment="CENTER" promptText="Введите ключ" visible="false" />
+
+    <Label text="Введите путь к файлу:" />
+    <TextField fx:id="filePathField" alignment="CENTER" promptText="Путь к файлу" />
+
+    <Button fx:id="executeButton" onAction="#executeAction" text="Выполнить" />
+</VBox>
